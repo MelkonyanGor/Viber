@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_viber/main_view.dart';
+import 'package:auto_route/auto_route.dart';
+import 'package:flutter_viber/routes/router.gr.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -20,7 +23,7 @@ class MainPage extends StatelessWidget {
             ),
             IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/chat');
+                context.router.push(const ChatRouter());
               },
               icon: const Icon(Icons.border_color_rounded),
               color: Colors.purple.shade800,
@@ -32,32 +35,59 @@ class MainPage extends StatelessWidget {
             Column(
               children: [
                 Row(
-                  children: const [
-                    Padding(
-                      padding: EdgeInsets.only(left: 15.0),
-                      child: Text(
-                        'Chats',
-                        style: TextStyle(
-                            fontSize: 35.0,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.white),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
                   children: [
                     Container(
                       margin: const EdgeInsets.only(top: 7.0),
-                      height: 0.3,
-                      width: 392.0,
-                      color: Colors.grey.shade700,
+                      height: 0.5,
+                      width: screenWidth,
+                      color: Colors.grey.shade900,
                     ),
                   ],
                 ),
                 const MainView(
-                  image: 'assets/image/download.jpeg',
-                  user: 'Gor',
+                  image: 'assets/image/images (1).jpeg',
+                  user: 'Suzanna',
+                  time: 'Today',
+                ),
+                const MainView(
+                  image: 'assets/image/istockphoto-1296158947-612x612.jpg',
+                  user: 'Sam',
+                  time: 'Today',
+                ),
+                const MainView(
+                  image: 'assets/image/_122913868_dulcie.jpg',
+                  user: 'Anna',
+                  time: 'Thusday',
+                ),
+                const MainView(
+                  image: 'assets/image/images (1).jpeg',
+                  user: 'Maria',
+                  time: 'Thursday',
+                ),
+                const MainView(
+                  image: 'assets/image/images.jpeg',
+                  user: 'Alex',
+                  time: 'Monday',
+                ),
+                const MainView(
+                  image: 'assets/image/images.jpeg',
+                  user: 'Jason',
+                  time: 'Sunday',
+                ),
+                const MainView(
+                  image: 'assets/image/images (1).jpeg',
+                  user: 'Lina',
+                  time: 'Saturday',
+                ),
+                const MainView(
+                  image: 'assets/image/images.jpeg',
+                  user: 'Hayk',
+                  time: 'Yesturday',
+                ),
+                const MainView(
+                  image: 'assets/image/_122913868_dulcie.jpg',
+                  user: 'Lusine',
+                  time: 'Friday',
                 ),
               ],
             ),
